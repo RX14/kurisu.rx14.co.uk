@@ -1,0 +1,9 @@
+#!/bin/bash
+export COMPOSE_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$COMPOSE_ROOT"
+
+export COMPOSE_PROJECT_NAME=kurisu
+export COMPOSE_FILE="$(ls -1 services/*/compose.yml | paste -sd ":" -)"
+
+/usr/bin/docker-compose "$@"
+
