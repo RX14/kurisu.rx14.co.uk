@@ -15,4 +15,7 @@ services:
         target: /etc/Caddyfile
     environment:
       CADDYPATH: "/var/caddy"
+    ports:
+      - "163.172.10.62:443:443"
+      - "163.172.10.62:80:80"
     restart: always
