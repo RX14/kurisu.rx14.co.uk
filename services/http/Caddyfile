@@ -5,4 +5,9 @@ rx14.co.uk {
   errors stderr
 
   root /var/www/sites/rx14.co.uk
+
+  markdown /
+  git https://github.com/RX14/rx14.co.uk / {
+    hook /webhook {$BLOG_WEBHOOK_PASSWORD}
+  }
 }
