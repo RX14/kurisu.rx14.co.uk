@@ -11,3 +11,23 @@ rx14.co.uk {
     hook /webhook {$BLOG_WEBHOOK_PASSWORD}
   }
 }
+
+www.aww.moe {
+  tls chris@rx14.co.uk
+
+  log / stdout {combined}
+  errors stderr
+
+  redir https://aww.moe{uri}
+}
+
+aww.moe {
+  tls chris@rx14.co.uk
+
+  log / stdout {combined}
+  errors stderr
+
+  proxy / http://pomfire:8080 {
+    keepalive 128
+  }
+}
