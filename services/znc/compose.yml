@@ -17,7 +17,7 @@ services:
     env_file: ${COMPOSE_ROOT}/services/znc/secret.env
     ports:
       - "163.172.10.62:6697:6697"
-    # restart: always
+    restart: always
   znc:
     build: ${COMPOSE_ROOT}/services/znc/src
     volumes:

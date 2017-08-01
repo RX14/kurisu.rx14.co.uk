@@ -31,3 +31,12 @@ aww.moe {
     keepalive 128
   }
 }
+
+znc.rx14.co.uk {
+  tls chris@rx14.co.uk
+
+  log / stdout {combined}
+  errors stderr
+
+  proxy / http://znc:8080
+}
