@@ -30,6 +30,8 @@ aww.moe {
   proxy / http://pomfire:8080 {
     keepalive 128
   }
+
+  proxy / http://crubot:3344/webhook
 }
 
 znc.rx14.co.uk {
