@@ -9,6 +9,7 @@ rx14.co.uk {
   markdown /
   git https://github.com/RX14/rx14.co.uk /var/www/sites/rx14.co.uk {
     hook /webhook {$BLOG_WEBHOOK_PASSWORD}
+    css /css/simple.css
   }
 }
 
