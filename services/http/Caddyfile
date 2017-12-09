@@ -5,6 +5,7 @@ rx14.co.uk {
   errors stderr
 
   root /var/www/sites/rx14.co.uk
+  browse /torrents
 
   markdown / {
     css /css/simple.css
