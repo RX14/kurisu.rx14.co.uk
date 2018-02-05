@@ -2,7 +2,11 @@ version: "3.3"
 
 services:
   http:
-    build: .
+    build:
+      context: github.com/abiosoft/caddy-docker.git#35e2e2f6e63a17afd18033d14f56af5501702a05
+      args:
+        plugins: git,gandi
+        version: 0.10.10
     volumes:
       - type: bind
         source: ${COMPOSE_ROOT}/data/sites/
