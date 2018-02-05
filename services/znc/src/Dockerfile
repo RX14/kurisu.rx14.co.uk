@@ -17,7 +17,7 @@ ENV ZNCSTRAP_VERSION e4aef30eb510e8926068e43711e6c4aa65fc5dc2
 RUN git clone https://github.com/ProjectFirrre/zncstrap/ /zncstrap \
  && cd "/zncstrap" \
  && git checkout ${ZNCSTRAP_VERSION} \
-
+ \
  && rm -Rf /usr/local/share/znc/webskins \
  && rm -Rf /usr/local/share/znc/modules \
  && mv webskins /usr/local/share/znc/ \
