@@ -1,0 +1,19 @@
+version: "3.3"
+
+services:
+  crubot:
+    image: andrewzah/crubot
+    volumes:
+      - type: bind
+        source: ${COMPOSE_ROOT}/crubot-links
+        target: /var/data/crubot-links
+    ports:
+      - ${CRUBOT_PORT}:${CRUBOT_PORT}
+    environment:
+      CRUBOT_HOST: ${CRUBOT_HOST}
+      CRUBOT_PORT: ${CRUBOT_PORT}
+      CRUBOT_TOKEN: ${CRUBOT_TOKEN}
+      CRUBOT_ID: ${CRUBOT_ID}
+      CRUBOT_GITHUB_SECRET: ${CRUBOT_GITHUB_SECRET}
+      CRUBOT_LINKS_DIR: /var/data/crubot-links
+    restart: always
