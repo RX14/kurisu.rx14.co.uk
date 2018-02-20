@@ -1,6 +1,6 @@
-FROM alpine:3.5
+FROM alpine:3.7
 
-LABEL caddy_version="0.10.10" architecture="amd64"
+LABEL caddy_version="0.10.11" architecture="amd64"
 
 ARG plugins=net,tls.dns.gandi
 
