@@ -5,7 +5,7 @@ services:
     build:
       context: github.com/abiosoft/caddy-docker.git
       args:
-        plugins: git,gandi
+        plugins: git
         version: 0.10.11
     volumes:
       - type: bind
