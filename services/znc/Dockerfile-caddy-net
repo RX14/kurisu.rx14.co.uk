@@ -2,7 +2,7 @@ FROM alpine:3.7
 
 LABEL caddy_version="0.10.11" architecture="amd64"
 
-ARG plugins=net,tls.dns.gandi
+ARG plugins=net,tls.dns.gandiv5
 
 RUN apk add --no-cache openssh-client tar curl
 
