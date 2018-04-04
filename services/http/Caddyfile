@@ -42,7 +42,7 @@ iscute.moe {
   proxy / pleroma:4000 {
     websocket
 
-    header_upstream Host {>Host}
+    header_upstream Host {host}
     header_upstream Accept {>Accept}
   }
 
