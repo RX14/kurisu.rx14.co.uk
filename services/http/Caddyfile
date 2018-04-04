@@ -16,15 +16,6 @@ rx14.co.uk {
   }
 }
 
-www.aww.moe {
-  tls chris@rx14.co.uk
-
-  log / stdout {combined}
-  errors stderr
-
-  redir https://aww.moe{uri}
-}
-
 aww.moe {
   tls chris@rx14.co.uk
 
