@@ -44,3 +44,17 @@ znc.rx14.co.uk {
 
   proxy / http://znc:8080
 }
+
+iscute.moe {
+  tls chris@rx14.co.uk
+
+  proxy / pleroma:4000 {
+    websocket
+  }
+
+  cache {
+    match_path /proxy
+    default_max_age 12h
+    path /cache/iscute.moe-mediaproxy
+  }
+}

@@ -5,18 +5,22 @@ services:
     build:
       context: github.com/abiosoft/caddy-docker.git
       args:
-        plugins: git
+        plugins: git,cache
         version: 0.10.11
     volumes:
       - type: bind
         source: ${COMPOSE_ROOT}/data/sites/
         target: /var/www/sites/
       - type: bind
+        source: ${COMPOSE_ROOT}/data/http-cache/
+        target: /cache/
+      - type: bind
         source: ${COMPOSE_ROOT}/data/caddy/caddypath/
         target: /var/caddy/
       - type: bind
         source: ${COMPOSE_ROOT}/services/http/Caddyfile
         target: /etc/Caddyfile
+        read_only: true
     environment:
       CADDYPATH: "/var/caddy"
     env_file: ${COMPOSE_ROOT}/services/http/secret.env

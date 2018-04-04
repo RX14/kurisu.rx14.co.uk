@@ -1,0 +1,37 @@
+version: "3.3"
+
+services:
+  pleroma:
+    build:
+      context: ${COMPOSE_ROOT}/services/iscute.moe/pleroma
+      args:
+        pleroma_version: d70d1c427a29411f2b47789f91894cd08f91ba6e
+    volumes:
+      - type: bind
+        source: ${COMPOSE_ROOT}/data/iscute.moe/pleroma-uploads
+        target: /uploads
+      - type: tmpfs
+        target: /tmp/
+    read_only: true
+    restart: always
+  pleroma_db:
+    image: postgres:10.3-alpine
+    volumes:
+      - type: bind
+        source: ${COMPOSE_ROOT}/data/iscute.moe/pleroma-db
+        target: /var/lib/postgresql/data
+      - type: bind
+        source: ${COMPOSE_ROOT}/services/iscute.moe/pleroma/setup_db.psql
+        target: /docker-entrypoint-initdb.d/pleroma.sql
+        read_only: true
+      - type: tmpfs
+        target: /tmp/
+      - type: tmpfs
+        target: /run/
+    environment:
+      POSTGRES_USER: pleroma
+      POSTGRES_DB: pleroma_prod
+    env_file: ${COMPOSE_ROOT}/services/iscute.moe/secret.env
+    command: -c 'shared_buffers=512MB' -c 'effective_cache_size=3GB' -c 'work_mem=64MB'
+    read_only: true
+    restart: always
