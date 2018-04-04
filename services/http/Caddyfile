@@ -45,10 +45,4 @@ iscute.moe {
     header_upstream Host {host}
     header_upstream Accept {>Accept}
   }
-
-  cache {
-    match_path /proxy
-    default_max_age 12h
-    path /cache/iscute.moe-mediaproxy
-  }
 }
