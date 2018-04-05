@@ -1,7 +1,6 @@
-FROM elixir:1.6.4-alpine
+FROM elixir:1.6.4
 
-RUN apk add --no-cache git build-base \
- && adduser -S pleroma \
+RUN adduser --system --uid 5439 pleroma \
  && mkdir /pleroma \
  && chown -R pleroma /pleroma
 
