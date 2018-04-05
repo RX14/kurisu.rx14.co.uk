@@ -15,7 +15,7 @@ config :pleroma, :instance,
   registrations_open: true
 
 config :pleroma, :media_proxy,
-  enabled: true,
+  enabled: false,
   redirect_on_failure: true
 
 config :pleroma, Pleroma.Repo,
