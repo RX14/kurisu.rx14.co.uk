@@ -9,10 +9,11 @@ USER pleroma
 ENV MIX_ENV prod
 
 ARG pleroma_version
-RUN git clone https://git.pleroma.social/pleroma/pleroma.git /pleroma \
+RUN git clone https://git.pleroma.social/RX14/pleroma.git /pleroma \
  && cd /pleroma \
  && git checkout ${pleroma_version}
 
+ADD favicon.png /pleroma/priv/static/favicon.png
 ADD config.exs /pleroma/config/prod.exs
 ADD config.secret.exs /pleroma/config/prod.secret.exs
 
