@@ -19,6 +19,7 @@ ADD emoji/ /pleroma/priv/static/emoji/
 ADD emoji.txt /pleroma/config/emoji.txt
 ADD config.exs /pleroma/config/prod.exs
 ADD config.secret.exs /pleroma/config/prod.secret.exs
+ADD TheThreadPolicy.ex /pleroma/lib/pleroma/web/activitypub/mrf/TheThreadPolicy.ex
 
 WORKDIR /pleroma
 
