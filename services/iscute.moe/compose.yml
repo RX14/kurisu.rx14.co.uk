@@ -5,7 +5,7 @@ services:
     build:
       context: ${COMPOSE_ROOT}/services/iscute.moe/pleroma
       args:
-        pleroma_version: efab899629d6124e7c13e96968d9c58609f1197c
+        pleroma_version: c9128ee02af156b018d8b49d20dc404332cc21c1
     volumes:
       - type: bind
         source: ${COMPOSE_ROOT}/data/iscute.moe/pleroma-uploads
