@@ -9,7 +9,7 @@ USER pleroma
 ENV MIX_ENV prod
 
 ARG pleroma_version
-RUN git clone https://git.pleroma.social/RX14/pleroma.git /pleroma \
+RUN git clone https://git.pleroma.social/pleroma/pleroma.git /pleroma \
  && cd /pleroma \
  && git checkout ${pleroma_version}
 
