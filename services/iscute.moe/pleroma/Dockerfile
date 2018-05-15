@@ -1,4 +1,4 @@
-FROM elixir:1.6.4
+FROM elixir:1.6.5
 
 RUN adduser --system --uid 5439 pleroma \
  && mkdir /pleroma \
@@ -19,7 +19,6 @@ ADD emoji/ /pleroma/priv/static/emoji/
 ADD emoji.txt /pleroma/config/emoji.txt
 ADD config.exs /pleroma/config/prod.exs
 ADD config.secret.exs /pleroma/config/prod.secret.exs
-ADD TheThreadPolicy.ex /pleroma/lib/pleroma/web/activitypub/mrf/TheThreadPolicy.ex
 
 WORKDIR /pleroma
 

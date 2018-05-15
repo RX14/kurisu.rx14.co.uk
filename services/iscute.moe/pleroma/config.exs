@@ -12,8 +12,7 @@ config :pleroma, :instance,
   name: "iscute.moe",
   email: "chris@rx14.co.uk",
   limit: 5000,
-  registrations_open: true,
-  rewrite_policy: Pleroma.Web.ActivityPub.MRF.TheThreadPolicy
+  registrations_open: true
 
 config :pleroma, :media_proxy,
   enabled: false,
