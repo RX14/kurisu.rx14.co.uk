@@ -43,4 +43,22 @@ iscute.moe {
     websocket
     transparent
   }
+
+  gzip
+
+  header / {
+    Access-Control-Allow-Origin   *
+    Access-Control-Allow-Methods  "POST, PUT, DELETE, GET, PATCH, OPTIONS"
+    Access-Control-Allow-Headers  "Authorization, Content-Type, Idempotency-Key"
+    Access-Control-Expose-Headers "Link, X-RateLimit-Reset, X-RateLimit-Limit, X-RateLimit-Remaining, X-Request-Id"
+
+    X-XSS-Protection                  "1; mode=block"
+    X-Permitted-Cross-Domain-Policies none
+    X-Frame-Options                   DENY
+    X-Content-Type-Options            nosniff
+    Referrer-Policy                   same-origin
+    X-Download-Options                noopen
+
+    Strict-Transport-Security "max-age=31536000"
+  }
 }
