@@ -1,6 +1,3 @@
-proxy :6697 znc:6697 {
+proxy :6697 mugi.iscute.moe:6697 {
   host znc.rx14.co.uk
-  tls chris@rx14.co.uk {
-    dns gandiv5
-  }
 }
